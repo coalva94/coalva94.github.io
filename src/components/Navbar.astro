@@ -1,0 +1,73 @@
+---
+---
+
+<nav class="fixed top-0 w-full z-10 bg-gray-900">
+  <div class="flex flex-wrap items-center justify-around md:justify-between p-4 w-full mx-auto max-w-screen-xl">
+    <div class="flex items-center space-x-3">
+      <p class="text-gray-300">Carlos Alva casana</p>
+      <a href="/Carlos_CV_2025.pdf" class="flex items-center">
+        <div class="px-5 border border-gray-500 rounded-lg text-gray-300 hover:text-white hover:border-gray-100">
+          <span>CV</span>
+        </div>
+      </a>
+    </div>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-300  hover:text-gray-100 md:hidden focus:outline-none " aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 rounded-lg text-center md:flex-row md:space-x-8 md:mt-0">
+        <li>
+          <a href="/" id="nav-home" class="block py-4 px-3 text-gray-400 hover:bg-gray-800 rounded-sm md:bg-transparent hover:md:bg-transparent md:p-0" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="/portfolio" id="nav-portfolio" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Portfolio</a>
+        </li>
+        <li>
+          <a href="/blog" id="nav-blog" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Blog</a>
+        </li>
+        <li>
+          <a href="/contacto" id="nav-contacto" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Contacto</a>
+        </li>
+        <li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const button = document.querySelector('[data-collapse-toggle="navbar-default"]');
+    const navbarMenu = document.getElementById('navbar-default');
+
+    if (button && navbarMenu) {
+      button.addEventListener('click', function () {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', (!isExpanded).toString());
+        navbarMenu.classList.toggle('hidden');
+      });
+    }
+
+   // Definir el tipo del objeto navLinks
+   const navLinks: { [key: string]: string } = {
+      '/': 'nav-home',
+      '/porfolio': 'nav-portfolio',
+      '/blog': 'nav-blog',
+      '/contacto': 'nav-contacto'
+    };
+
+    // Lógica para cambiar la clase del enlace activo
+    const currentPath = window.location.pathname;
+
+    if (navLinks[currentPath]) {
+      const activeLink = document.getElementById(navLinks[currentPath]);
+      if (activeLink) {
+        activeLink.classList.add('text-gray-100');
+        activeLink.classList.remove('text-gray-400');
+      }
+    }
+  });
+</script>
