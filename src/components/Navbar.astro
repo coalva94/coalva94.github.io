@@ -1,12 +1,12 @@
 ---
 ---
 
-<nav class="fixed top-0 w-full z-10 bg-gray-900">
+<nav class="fixed top-0 w-full mx-auto z-10 bg-white border dark:border-gray-800 dark:bg-gray-950">
   <div class="flex flex-wrap items-center justify-around md:justify-between p-4 w-full mx-auto max-w-screen-xl">
     <div class="flex items-center space-x-3">
-      <p class="text-gray-300">Carlos Alva casana</p>
+      <p class="text-gray-500 dark:text-gray-300">Carlos Alva casana</p>
       <a href="/Carlos_CV_2025.pdf" class="flex items-center">
-        <div class="px-5 border border-gray-500 rounded-lg text-gray-300 hover:text-white hover:border-gray-100">
+        <div class="px-5 border  rounded-lg text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 border-gray-300 hover:border-gray-800 dark:hover:border-gray-100">
           <span>CV</span>
         </div>
       </a>
@@ -20,16 +20,16 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="flex flex-col p-4 md:p-0 mt-4 rounded-lg text-center md:flex-row md:space-x-8 md:mt-0">
         <li>
-          <a href="/" id="nav-home" class="block py-4 px-3 text-gray-400 hover:bg-gray-800 rounded-sm md:bg-transparent hover:md:bg-transparent md:p-0" aria-current="page">Home</a>
+          <a href="/" id="nav-home" class="block py-4 px-3 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-50 md:border-0 md:p-0" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="/portfolio" id="nav-portfolio" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Portfolio</a>
+          <a href="/portfolio" id="nav-portfolio" class="block py-4 px-3 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-50 md:border-0 md:p-0">Portfolio</a>
         </li>
         <li>
-          <a href="/blog" id="nav-blog" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Blog</a>
+          <a href="/blog" id="nav-blog" class="block py-4 px-3 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-50 md:border-0 md:p-0">Blog</a>
         </li>
         <li>
-          <a href="/contacto" id="nav-contacto" class="block py-4 px-3 text-gray-400 rounded-sm hover:text-gray-100 hover:bg-gray-800 md:hover:text-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Contacto</a>
+          <a href="/contacto" id="nav-contacto" class="block py-4 px-3 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-50 md:border-0 md:p-0">Contacto</a>
         </li>
         <li>
         </li>
@@ -54,7 +54,7 @@
    // Definir el tipo del objeto navLinks
    const navLinks: { [key: string]: string } = {
       '/': 'nav-home',
-      '/porfolio': 'nav-portfolio',
+      '/portfolio': 'nav-portfolio',
       '/blog': 'nav-blog',
       '/contacto': 'nav-contacto'
     };
@@ -65,8 +65,10 @@
     if (navLinks[currentPath]) {
       const activeLink = document.getElementById(navLinks[currentPath]);
       if (activeLink) {
-        activeLink.classList.add('text-gray-100');
-        activeLink.classList.remove('text-gray-400');
+        activeLink.classList.add('text-gray-800');
+        activeLink.classList.add('dark:text-gray-50');
+        activeLink.classList.remove('text-gray-500');
+        activeLink.classList.remove('dark:text-gray-400');
       }
     }
   });
