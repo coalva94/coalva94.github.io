@@ -5,6 +5,7 @@ const proyectos = defineCollection({
   schema: z.object({
     title: z.string(),
     author: z.string(),
+    category: z.string(),
     img: z.string(),
     description: z.string(),
     }),

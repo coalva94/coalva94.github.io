@@ -65,10 +65,8 @@
     if (navLinks[currentPath]) {
       const activeLink = document.getElementById(navLinks[currentPath]);
       if (activeLink) {
-        activeLink.classList.add('text-gray-800');
-        activeLink.classList.add('dark:text-gray-50');
-        activeLink.classList.remove('text-gray-500');
-        activeLink.classList.remove('dark:text-gray-400');
+        activeLink.classList.add('text-gray-800','dark:text-gray-50' );
+        activeLink.classList.remove('text-gray-500', 'dark:text-gray-400');
       }
     }
   });
