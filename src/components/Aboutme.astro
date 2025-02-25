@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import scrImage from '../assets/carlos.png';
 ---
 
 <h2
@@ -51,11 +52,12 @@
       </a>
     </div>
   </div>
-  <img
-    width="555"
-    height="555"
-    src="/carlos.png"
+  <Image
+    src= {scrImage}
+    width={555}
+    height={555}
     alt=""
+    loading={'eager'}
     class="order-1 object-cover w-64 h-full p-1 lg:p-1 lg:w-48 md:w-40 aspect-square rounded-xl bg-gray-400 dark:bg-gray-50"
     style="object-position: 50% 50%"
   />
