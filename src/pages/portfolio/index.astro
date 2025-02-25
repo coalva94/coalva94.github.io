@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import Tabs from '../../components/Tabs.astro';
+---
+
+<Layout title="Bienvenidos a mi Portfolio">
+    <section aria-label = "Proyectos en python, sql, PowerBI y más..">
+      <Tabs />
+      <div class= "px-4 pt-6 w-full mx-auto container sm:max-w-xl md:max-w-2xl lg:max-w-5xl">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr mb-6">
+          <Card />
+        </div>
+      </div>
+    </section>
+</Layout>

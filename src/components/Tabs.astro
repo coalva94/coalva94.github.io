@@ -1,4 +1,5 @@
-
+---
+---
 
 <div class="flex justify-center border-b border-gray-200 dark:border-gray-700">
   <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-400">
@@ -23,11 +24,11 @@
               </svg>Python
           </a>
       </li>
-      <li class="filter-btn me-2" data-filter="otros">
+      <li class="filter-btn me-2" data-filter="todos">
           <a href="#" class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-900 hover:border-gray-900 dark:hover:text-gray-200 dark:hover:border-gray-200">
               <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                   <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
-              </svg>Otros
+              </svg>Todos
           </a>
       </li>
 
@@ -58,37 +59,3 @@
     });
   });
 </script>
-
-
-
-<!-----
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".filter-btn a");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        // Remover la clase activa de todos los botones y sus SVGs
-        buttons.forEach(btn => {
-          btn.classList.remove("text-blue-600", "border-blue-600", "dark:text-blue-500", "dark:border-blue-500");
-          const svg = btn.querySelector("svg");
-          if (svg) {
-            svg.classList.remove("text-blue-600", "dark:text-blue-500");
-            svg.classList.add("text-gray-400", "dark:text-gray-500");
-          }
-        });
-
-        // Agregar la clase activa al botón clicado y su SVG
-        button.classList.add("text-gray-500", "border-gray-900", "dark:text-gray-200", "dark:border-gray-200");
-        const svg = button.querySelector("svg");
-        if (svg) {
-          svg.classList.remove("text-gray-500", "dark:text-gray-200");
-          svg.classList.add("text-gray-900", "dark:text-gray-200");
-        }
-      });
-    });
-  });
-</script>
---- -->
