@@ -21,10 +21,24 @@ const ariaLabel = external ? `${label} (se abre en una pestaña nueva)` : label;
   rel={external ? "noopener noreferrer" : undefined}
 >
   {icon === "download" && (
-    <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v10" />
-      <path stroke-linecap="round" stroke-linejoin="round" d="M8 10l4 4 4-4" />
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 20h14" />
+    <svg class="h-7 w-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+        d="M7 2.75h7.1L19.25 8v12.1a1.4 1.4 0 0 1-1.4 1.4H7a1.4 1.4 0 0 1-1.4-1.4V4.15A1.4 1.4 0 0 1 7 2.75z"
+      />
+      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M13.8 2.9V8h5.2" />
+      <text
+        x="12"
+        y="17.2"
+        text-anchor="middle"
+        fill="currentColor"
+        font-size="6.4"
+        font-weight="700"
+        font-family="Inter, system-ui, sans-serif"
+      >PDF</text>
     </svg>
   )}
   {icon === "linkedin" && (
