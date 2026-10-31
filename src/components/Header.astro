@@ -1,0 +1,117 @@
+---
+import { site } from '../data/config.js';
+---
+
+<a
+  href="#contenido"
+  class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:rounded-lg focus:bg-card-bg focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-text-bright"
+>
+  Saltar al contenido
+</a>
+
+<header class="sticky top-0 z-50 border-b border-card-border bg-bg-main/95 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4">
+    <a href="#inicio" class="truncate text-base font-semibold tracking-tight text-text-bright">
+      {site.name}
+    </a>
+
+    <div class="flex items-center gap-2">
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Secciones">
+        {
+          site.nav.map((item) => (
+            <a
+              href={item.href}
+              class="rounded-lg px-2.5 py-2 text-sm font-medium text-text-muted hover:text-text-bright"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-card-border text-text-muted hover:text-text-bright"
+        aria-label="Activar modo oscuro"
+        aria-pressed="false"
+      >
+        <svg class="icon-sun h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+        </svg>
+        <svg class="icon-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+
+      <details id="menu-movil" class="relative lg:hidden">
+        <summary class="inline-flex h-11 cursor-pointer items-center rounded-lg border border-card-border px-4 text-sm font-semibold text-text-bright">
+          <span class="menu-label-open">Menú</span>
+          <span class="menu-label-close">Cerrar</span>
+        </summary>
+        <nav
+          class="absolute right-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-card-border bg-card-bg p-2 shadow-lg"
+          aria-label="Secciones"
+        >
+          {
+            site.nav.map((item) => (
+              <a
+                href={item.href}
+                class="block rounded-lg px-3 py-3 text-base font-medium text-text-bright hover:bg-accent-bg"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<style>
+  .menu-label-close {
+    display: none;
+  }
+
+  details[open] .menu-label-open {
+    display: none;
+  }
+
+  details[open] .menu-label-close {
+    display: inline;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const themeToggle = document.getElementById('theme-toggle');
+    const menu = document.getElementById('menu-movil');
+
+    function syncThemeButton() {
+      if (!themeToggle) return;
+      const dark = document.documentElement.classList.contains('dark');
+      themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro');
+    }
+
+    syncThemeButton();
+
+    themeToggle?.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      const dark = document.documentElement.classList.contains('dark');
+      try {
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      } catch (error) {
+        /* el tema sigue aplicado en la página */
+      }
+      syncThemeButton();
+    });
+
+    menu?.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.removeAttribute('open');
+      });
+    });
+  })();
+</script>

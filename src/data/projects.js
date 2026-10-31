@@ -1,47 +1,32 @@
-/**
- * Static Projects List.
- * Edit this file to add or modify projects displayed on the portfolio.
- */
-export const portfolioProjects = [
+export const projects = [
   {
-    id: 1,
-    name: "sap-s4hana-migration-suite",
-    description: "Suite de herramientas en Python y Flask que automatiza el pipeline de migración a SAP S/4HANA: extracción desde SQL Server, mapeo y validación de campos, procesamiento por lotes con auditoría y verificación de integridad hash (~60 plantillas, ~900 archivos/sesión).",
-    html_url: "https://github.com/coalva94",
-    stargazers_count: 42,
-    forks_count: 12,
-    language: "Python",
-    topics: ["sap-s4hana", "python", "flask", "sql-server", "pandas"]
+    title: "Validación de plantillas de migración a SAP con agentes de IA",
+    tags: ["Claude", "agentes", "SAP S/4HANA"],
+    description:
+      "Flujos de agentes que revisan cada plantilla de migración antes de cargarla en SAP S/4HANA: consultan la documentación de SAP y aprenden de los errores de cargas anteriores. Elijo el modelo y el nivel de esfuerzo de cada paso según coste y eficiencia, y cuando una carga falla analizo los logs con IA.",
   },
   {
-    id: 2,
-    name: "sonda-horeca-ai-platform",
-    description: "Plataforma web con IA generativa para el monitoreo inteligente y analítica del sector HORECA. Diseñada, implementada y desplegada en producción con Next.js, TypeScript y Supabase.",
-    html_url: "https://github.com/coalva94",
-    stargazers_count: 36,
-    forks_count: 9,
-    language: "TypeScript",
-    topics: ["nextjs", "typescript", "supabase", "ia-generativa"]
+    title: "SONDA",
+    tags: ["IA generativa", "Next.js", "TypeScript", "Supabase"],
+    description:
+      "Aplicación interna con IA generativa para monitorizar el sector HORECA. Ya la utilizan los usuarios de la empresa y no es accesible desde fuera.",
   },
   {
-    id: 3,
-    name: "spfx-modern-dashboard-webpart",
-    description: "Componente web part SPFx personalizado para SharePoint Online que expone analíticas ejecutivas en tiempo real mediante gráficos interactivos y seguridad basada en roles Entra ID.",
-    html_url: "https://github.com/coalva94/spfx-modern-dashboard-webpart",
-    stargazers_count: 24,
-    forks_count: 6,
-    language: "TypeScript",
-    topics: ["sharepoint", "spfx", "react", "m365"]
+    title: "Aplicación propia de migración a SAP S/4HANA",
+    tags: ["Python", "Flask", "SQL Server", "pandas"],
+    description:
+      "Panel web multiusuario que lee SQL Server, Excel o Access, valida tipo, longitud, decimales, NIF, CP e IBAN antes de exportar y genera ficheros validados para SAP Migration Cockpit. Unos 650 tests automáticos; exportación por lotes 9,4 veces más rápida tras optimizarla con pandas.",
   },
   {
-    id: 4,
-    name: "sap-to-sharepoint-sync-connector",
-    description: "Conector automatizado para sincronizar registros maestros y datos de SAP (MM, SD, PP, PM, FI) con bibliotecas y listas de documentos en SharePoint Online mediante Power Platform.",
-    html_url: "https://github.com/coalva94/sap-to-sharepoint-sync-connector",
-    stargazers_count: 29,
-    forks_count: 7,
-    language: "JavaScript",
-    topics: ["sap", "sharepoint", "power-automate", "cloud-integration"]
-  }
+    title: "Migración del servidor de ficheros a SharePoint Online",
+    tags: ["SharePoint Online", "PowerShell", "React", "Supabase"],
+    description:
+      "Migración por áreas de negocio con cuatro herramientas encadenadas: limpieza por capas, etiquetado de metadatos, subida con simulación previa y reanudación, y trazabilidad con controles de integridad.",
+  },
+  {
+    title: "Intranet corporativa en SharePoint Online",
+    tags: ["SharePoint Online", "Microsoft Entra ID", "adopción"],
+    description:
+      "Arquitectura de la intranet para más de 300 usuarios (hub sites, metadatos y permisos por grupos de seguridad) y plan de adopción con materiales y sesiones de formación para dirección y equipos no técnicos.",
+  },
 ];
-

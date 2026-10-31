@@ -1,0 +1,46 @@
+---
+import { site } from '../data/config.js';
+---
+
+<section id="inicio" class="border-b border-card-border">
+  <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 md:grid-cols-[minmax(0,1fr)_12rem] md:py-20">
+    <div class="text-center md:text-left">
+      <h1 class="text-balance text-3xl font-semibold leading-tight tracking-tight text-text-bright sm:text-4xl md:text-5xl">
+        <span class="mb-3 block text-base font-semibold text-accent-text sm:text-lg">{site.name}</span>
+        {site.headline}
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-balance text-base leading-relaxed text-text-muted md:mx-0 md:text-lg">
+        {site.subtitle}
+      </p>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-bright md:mx-0 md:text-lg">
+        {site.lead}
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
+        <a class="btn btn-primary w-full sm:w-auto" href={site.cv.href} download={site.cv.filename}>
+          {site.cv.label}
+        </a>
+        <a
+          class="btn btn-secondary w-full sm:w-auto"
+          href={site.linkedin.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {site.linkedin.label}
+          <span class="sr-only"> (se abre en una pestaña nueva)</span>
+        </a>
+        <a class="btn btn-secondary w-full sm:w-auto" href="#contacto">
+          Contacto
+        </a>
+      </div>
+    </div>
+    <img
+      src={site.photo.src}
+      alt={site.photo.alt}
+      width={site.photo.width}
+      height={site.photo.height}
+      class="mx-auto h-36 w-36 rounded-full object-cover ring-4 ring-card-bg shadow-md md:h-48 md:w-48"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+</section>
