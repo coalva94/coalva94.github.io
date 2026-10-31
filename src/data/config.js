@@ -16,7 +16,7 @@ export const site = {
   },
   cv: {
     href: "/docs/CV_Carlos_Alva_Casana.pdf",
-    label: "Descargar CV (pdf)",
+    label: "Descargar CV",
     filename: "CV_Carlos_Alva_Casana.pdf",
   },
   linkedin: {

@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/config.js';
+import ActionButton from './ActionButton.astro';
 ---
 
 <section id="inicio" class="border-b border-card-border">
@@ -15,22 +16,10 @@ import { site } from '../data/config.js';
       <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-bright md:mx-0 md:text-lg">
         {site.lead}
       </p>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
-        <a class="btn btn-primary w-full sm:w-auto" href={site.cv.href} download={site.cv.filename}>
-          {site.cv.label}
-        </a>
-        <a
-          class="btn btn-secondary w-full sm:w-auto"
-          href={site.linkedin.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {site.linkedin.label}
-          <span class="sr-only"> (se abre en una pestaña nueva)</span>
-        </a>
-        <a class="btn btn-secondary w-full sm:w-auto" href="#contacto">
-          Contacto
-        </a>
+      <div class="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 md:justify-start">
+        <ActionButton href={site.cv.href} label={site.cv.label} icon="download" variant="primary" download={site.cv.filename} />
+        <ActionButton href={site.linkedin.href} label={site.linkedin.label} icon="linkedin" external />
+        <ActionButton href="#contacto" label="Contacto" icon="mail" />
       </div>
     </div>
     <img

@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/config.js';
+import ActionButton from './ActionButton.astro';
 ---
 
 <section id="contacto">
@@ -29,8 +30,8 @@ import { site } from '../data/config.js';
         </a>
       </li>
     </ul>
-    <a class="btn btn-primary mt-8 w-full sm:w-auto" href={site.cv.href} download={site.cv.filename}>
-      {site.cv.label}
-    </a>
+    <div class="mt-8">
+      <ActionButton href={site.cv.href} label={site.cv.label} icon="download" variant="primary" download={site.cv.filename} />
+    </div>
   </div>
 </section>
