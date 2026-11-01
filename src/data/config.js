@@ -24,8 +24,6 @@ export const site = {
     label: "LinkedIn",
   },
   email: "coalva.94@gmail.com",
-  phone: "+34 641 05 79 04",
-  phoneHref: "tel:+34641057904",
   contact:
     "¿Hablamos? Estoy en Bilbao y abierto a proyectos de IA aplicada, digitalización de procesos y transformación digital.",
   footer: "© 2026 Carlos Alva Casana · Bilbao",
